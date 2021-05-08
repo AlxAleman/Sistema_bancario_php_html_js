@@ -6,7 +6,7 @@
 //   header("Location: admin.php");
 // }
 ?>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -112,7 +112,7 @@
                 extract($_GET);
                 if (@$idborrar == 2) {
 
-                  $sqlborrar = "DELETE FROM cuenta WHERE id=$id";
+                  $sqlborrar = "DELETE FROM cuenta WHERE cod_cliente=$id"; //tiene que ser cod_cliente
                   $resborrar = mysqli_query($conexion, $sqlborrar);
                   echo '<script>alert("BANCO AZUL A ELIMINADO A ESTE USUARIO")</script> ';
                   echo "<script>location.href='bancolombiaadmin.php'</script>";
@@ -183,7 +183,7 @@
                 extract($_GET);
                 if (@$idborrar == 2) {
 
-                  $sqlborrar = "DELETE FROM dinero WHERE id=$id";
+                  $sqlborrar = "DELETE FROM dinero WHERE cod_cliente=$id";
                   $resborrar = mysqli_query($mysqli, $sqlborrar);
                   echo '<script>alert("BANCOLOMBIA A ELIMINADO A ESTE USUARIO")</script> ';
                   echo "<script>location.href='bancolombiaadmin.php'</script>";

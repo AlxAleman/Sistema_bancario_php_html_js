@@ -4,7 +4,7 @@
 
 
 	require("conexion.php");
-	$checkemail=mysqli_query($mysqli,"SELECT * FROM dinero ");
+	$checkemail=mysqli_query($mysqli,"SELECT * FROM cuenta ");
 	$check_mail=mysqli_num_rows($checkemail);
 		if($dinero<=100000){
 			if($check_mail>0){

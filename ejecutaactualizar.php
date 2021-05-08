@@ -3,8 +3,8 @@
 
 extract($_POST);
 	require("conexion.php");
-	$sentencia="update dinero set dinero='$dinero' where id='$id'";
-	$resent=mysqli_query($mysqli,$sentencia);
+	$sql="update dinero set dinero='$dinero' where id='$id'";
+	$resent=mysqli_query($mysqli,$sql);
 	if ($resent==null) {
 		echo '<script>alert("ERROR EN PROCESAMIENTO DE LA TRASFERENCIA ")</script> ';
 		echo "<script>location.href='midinero.php'</script>";

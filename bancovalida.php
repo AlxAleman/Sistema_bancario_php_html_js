@@ -13,7 +13,6 @@ session_start();
 	var_dump($array);
 
 
-
 	if (mysqli_num_rows($consulta)>0) {
 		if ($nivel=='administrador') {
 			$_SESSION['usuario']= $array['nombre_cliente'];
@@ -25,10 +24,10 @@ session_start();
 		} else {
 			$_SESSION['usuario']= $array['nombre_cliente'];
 			$_SESSION['rol'] = $array['rol'];
-			$_SESSION['cod'] = $array['cod_cliente'];
+			$_SESSION['codigo'] = $array['cod_cliente'];
 
 			echo '<script>alert("BIENVENIDO A BANCO AZUL")</script> ';
-			echo "<script>location.href='inicio.php'</script>";
+			echo "<script>location.href='midinero.php'</script>";
 		}
 	} else {
 		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';		
