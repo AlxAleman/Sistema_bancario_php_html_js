@@ -70,6 +70,7 @@
                 require("conexion.php");
                 $sql = "SELECT cuenta.ncta, cuenta.cod_cliente, cliente.nombre_cliente, SUM(transacciones.monto) FROM cuenta, transacciones, cliente WHERE transacciones.ncta = '$nCuenta' AND cuenta.cod_cliente = '$codigo' AND cliente.cod_cliente = '$codigo'";
                 $query = mysqli_query($mysqli, $sql);
+                echo "<center><font color='068408' size='5'>Bienvenido a tu cuenta</font></center>";
                 echo " <table class='table table-striped table-sm table-responsive-sm'>";
                 echo "<thead class='thead-dark'>";
 
@@ -95,9 +96,8 @@
                   echo "<td>$arreglo[1]</td>";
                   echo "<td>$arreglo[2]</td>";
                   echo "<td>$$arreglo[3]</td>";
-                  echo "<td><div class='content'><a href='sacardinero.php?id=$arreglo[0]'><input class='btn btn-danger' type='submit' name='submit' value='Retiro' /></a></td>";
-                  echo "<td><div class='content'><a href='sacardinero.php?id=$arreglo[0]'><input class='btn btn-success' type='submit' name='submit' value='Deposito' /></a></td>";
-                  //echo "<td><a href='sacardinero.php?id=$arreglo[0]'>sacar dinero </td>";
+                  echo "<td><div class='content'><a href='sacardinero.php?id=$arreglo[0]&cod=$arreglo[1]'><input class='btn btn-danger' type='submit' name='submit' value='Retiro' /></a></td>";
+                  echo "<td><div class='content'><a href='deposito.php?id=$arreglo[0]&cod=$arreglo[1]'><input class='btn btn-success' type='submit' name='submit' value='Deposito' /></a></td>";
                 }
 
 
@@ -117,18 +117,7 @@
 
                 ?>
 
-                <?php
-
-
-                if ($dinero > 0) {
-
-                  echo "<center><font color='D10404' size='5'>Usted debe dinero, debe pagar lo que debe o su cuenta se cancelara en las proximas 24 horas</center>";
-                } else {
-
-                  echo "<center><font color='068408' size='5'>BIENVENIDO A TU CUENTA</font></center>";
-                }
-
-                ?>
+                
                 <br>
                 <br>
               </div>

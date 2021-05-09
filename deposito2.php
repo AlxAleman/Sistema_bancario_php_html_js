@@ -75,7 +75,7 @@ $saldoActual = $arreglo[2];
 
 							<center>
 
-								<form name="MyForm" action="ejecutaactualizar1.php" method="post">
+								<form name="MyForm" action="depositovalidar.php" method="post">
 									<br>
 									<br>
 									<label>
@@ -91,13 +91,13 @@ $saldoActual = $arreglo[2];
 									<br>
 									<br>
 									<label>
-										<font color="black" size="5">Cantidad de dinero que desea retirar:</font>
+										<font color="black" size="5">Cantidad de dinero que desea Depositar:</font>
 									</label>
 									<input type="number" class="form-control" name="retiro" size="20">
 									<br>
 									<br>
 
-									<input type="submit" class="btn btn-warning" value="Retirar Dinero">
+									<input type="submit" class="btn btn-warning" value="Depositar Dinero">
 									<a href="midinero.php"><input type="button" class="btn btn-primary" value="regresar"> </a>
 
 								</form>

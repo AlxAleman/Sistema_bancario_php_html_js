@@ -1,18 +1,24 @@
 <?php
+$id = $_REQUEST['id'];
+$saldo = $_REQUEST['saldo'];
+$retiro = $_REQUEST['retiro'];
 
+require("conexion.php");
+$sql = "SELECT ncta, tipo, SUM(monto) AS saldo, fecha FROM transacciones WHERE ncta = '$id'";
+								
+$query = mysqli_query($mysqli, $sql);
+$arreglo = mysqli_fetch_array($query);
+$saldoActual =$arreglo[2];
 
-extract($_POST);
-	require("conexion.php");
-	$sentencia="update dinero set dinero='$dinero' where id='$id'";
-	$resent=mysqli_query($mysqli,$sentencia);
-	if ($resent==null) {
-		echo '<script>alert("ERROR EN PROCESAMIENTO DE LA TRASFERENCIA ")</script> ';
-		echo "<script>location.href='midinero.php'</script>";
-	}else {
-		echo '<script>alert("TRASFERENCIA REALIZADA")</script> ';
-		
-		echo "<script>location.href='midinero.php'</script>";
+if ($retiro > $saldoActual) {
+	echo '<script>alert("USTED NO POSEE DINERO SUFICIENTE")</script> ';
+	echo "<script>location.href='midinero.php'</script>";
+} else {
+	$retiro = -1* abs($retiro);
+	$sql2 = "INSERT INTO transacciones (cod_transac, monto, tipo, ncta, fecha) SELECT MAX(cod_transac)+1, '$retiro', 'retiro', '$id', CURDATE() FROM transacciones";
+	mysqli_query($mysqli, $sql2);
 
-		
-	}
-?>
+	
+	echo '<script>alert("TRASFERENCIA REALIZADA")</script> ';		
+	echo "<script>location.href='midinero.php'</script>";
+}

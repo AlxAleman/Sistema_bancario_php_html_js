@@ -3,7 +3,7 @@
 <head>
 
 	</script>
-	<title>Bancolombia</title>
+	<title>Banco Azul</title>
 
 	<link rel="icon" type="image/png" href="imagenes/alaLogo.png" />
 
@@ -74,7 +74,7 @@
 									echo "<br>";
 									echo "<br>";
 
-									echo '<form action="retiro.php" method="post">';  //ejecutaactualizar
+									echo '<form action="deposito2.php" method="post">'; 
 
 									echo "<font color='black' size='4'>Numero de Cuenta</font><br><input type='text' class='form-control' name='id' value= ", $arreglo[0], " readonly='readonly'";
 									echo "<br>";
@@ -84,7 +84,7 @@
 									echo "<br>";
 									echo "<br>";
 									echo "<br>";
-									echo "<a href='retiro.php'><input type='submit' value='Retirar dinero' class='btn btn-success'></a>";
+									echo "<a href='retiro.php'><input type='submit' value='Depositar dinero' class='btn btn-success'></a>";
 									echo "<br>";
 									echo "<br>";
 									echo "<a href='midinero.php'><input type='button' class='btn btn-primary' value='regresar'> </a>";

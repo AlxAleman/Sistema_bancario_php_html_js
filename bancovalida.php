@@ -29,7 +29,7 @@ session_start();
 			echo "<script>location.href='midinero.php'</script>";
 		}
 	} else {
-		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';		
+		echo '<script>alert("ESTE USUARIO NO EXISTE, POR FAVOR REGISTRESE PARA PODER INGRESAR")</script> ';		
 		echo "<script>location.href='index.php'</script>";
 	}
 ?>
