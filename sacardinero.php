@@ -3,7 +3,7 @@
 <head>
 
 	</script>
-	<title>Bancolombia</title>
+	<title>Banco Azul</title>
 
 	<link rel="icon" type="image/png" href="imagenes/alaLogo.png" />
 

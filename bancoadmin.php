@@ -12,7 +12,7 @@
 
    </script><title>Banco Azul</title>
 
-  <link rel="icon" type="image/png" href="imagenes/bancolombia.png" />
+  <link rel="icon" type="image/png" href="imagenes/alaLogo.png" />
 
 
     <link href="static/css/style.css" rel="stylesheet">
