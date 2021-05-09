@@ -76,7 +76,7 @@
       <?php
 
         require("bancoconexion.php");
-        $sql=("SELECT * FROM cuenta");
+        $sql=("SELECT * FROM cliente");
   
         $query=mysqli_query($conexion,$sql);
 
@@ -84,16 +84,12 @@
           echo "<thead class='thead-dark'>";
                       echo "<tr>";
 
-            echo "<th>Id</th>";
+            echo "<th>Codigo Cliente</th>";
             echo "<th>Nombre</th>";
-            echo "<th>contraseña</th>";
-            echo "<th>Correo</th>";
-            echo "<th>T.documento</th>";
-            echo "<th>Documento</th>";
-            echo "<th>Contraseña admin</th>";
+            echo "<th>NIT</th>";
             echo "<th>Rol</th>";
-            echo "<th>Editar</th>";
-            echo "<th>Borrar</th>";
+            echo "<th>Modificar</th>";
+            echo "<th>Eliminar</th>";
           echo "</tr>";
   echo "<tr>";
 
@@ -107,14 +103,10 @@
               echo "<td>$arreglo[1]</td>";
               echo "<td>$arreglo[2]</td>";
               echo "<td>$arreglo[3]</td>";
-              echo "<td>$arreglo[4]</td>";
-              echo "<td>$arreglo[5]</td>";
-              echo "<td>$arreglo[6]</td>";
-              echo "<td>$arreglo[7]</td>";
 
 
 echo "<td><a href='actualizarcuenta.php?id=$arreglo[0]'><img src='imagenes/modificar.png' width='60' class='img-rounded'></td>";
-echo "<td><a href='bancolombiaadmin.php?id=$arreglo[0]&idborrar=2'><img src='imagenes/tarjetaborrar.svg' width='60' class='img-rounded'/></a></td>";
+echo "<td><a href='bancoadmin.php?id=$arreglo[0]&idborrar=2'><img src='imagenes/tarjetaborrar.svg' width='60' class='img-rounded'/></a></td>";
             
 
             
@@ -123,15 +115,7 @@ echo "<td><a href='bancolombiaadmin.php?id=$arreglo[0]&idborrar=2'><img src='ima
 
         echo "</table>";
 
-          extract($_GET);
-          if(@$idborrar==2){
-    
-            $sqlborrar="DELETE FROM cuentas WHERE id=$id";
-            $resborrar=mysqli_query($mysqli,$sqlborrar);
-            echo '<script>alert("BANCOLOMBIA A ELIMINADO A ESTE USUARIO")</script> ';
-            echo "<script>location.href='bancolombiaadmin.php'</script>";
-          }
-
+          
       ?>
     </center>
 

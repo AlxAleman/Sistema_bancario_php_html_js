@@ -100,7 +100,7 @@
 
 
                   echo "<td><a href='actualizarcuenta.php?id=$arreglo[0]'><img src='imagenes/modificar.png' width='60' class='img-rounded'></td>";
-                  echo "<td><a href='bancolombiaadmin.php?id=$arreglo[0]&idborrar=2'><img src='imagenes/tarjetaborrar.svg' width='60' class='img-rounded'/></a></td>";
+                  echo "<td><a href='bancoborrar.php?id=$arreglo[0]'><img src='imagenes/tarjetaborrar.svg' width='60' class='img-rounded'/></a></td>";
 
 
 
@@ -112,7 +112,7 @@
                 extract($_GET);
                 if (@$idborrar == 2) {
 
-                  $sqlborrar = "DELETE FROM cuenta WHERE cod_cliente=$id"; //tiene que ser cod_cliente
+                  $sqlborrar = "DELETE FROM cuenta WHERE cod_cliente=$id"; 
                   $resborrar = mysqli_query($conexion, $sqlborrar);
                   echo '<script>alert("BANCO AZUL A ELIMINADO A ESTE USUARIO")</script> ';
                   echo "<script>location.href='bancolombiaadmin.php'</script>";
