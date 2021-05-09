@@ -14,6 +14,8 @@
   $query = mysqli_query($mysqli, $sql);
   $row = $query->fetch_assoc();
   $nCuenta = $row['ncta'];
+  
+  
   ?>
 
   <html>
@@ -66,7 +68,7 @@
                 <br>
                 <?php
                 require("conexion.php");
-                $sql = ("SELECT cuenta.ncta, cuenta.cod_cliente, cliente.nombre_cliente, SUM(transacciones.monto) FROM cuenta, transacciones, cliente WHERE transacciones.ncta = '$nCuenta' AND cuenta.cod_cliente = '$codigo' AND cliente.cod_cliente = '$codigo'");
+                $sql = "SELECT cuenta.ncta, cuenta.cod_cliente, cliente.nombre_cliente, SUM(transacciones.monto) FROM cuenta, transacciones, cliente WHERE transacciones.ncta = '$nCuenta' AND cuenta.cod_cliente = '$codigo' AND cliente.cod_cliente = '$codigo'";
                 $query = mysqli_query($mysqli, $sql);
                 echo " <table class='table table-striped table-sm table-responsive-sm'>";
                 echo "<thead class='thead-dark'>";

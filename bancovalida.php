@@ -10,7 +10,6 @@ session_start();
 	$array = mysqli_fetch_assoc($consulta);
 
 	$nivel = $array['rol'];
-	var_dump($array);
 
 
 	if (mysqli_num_rows($consulta)>0) {
