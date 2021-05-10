@@ -220,18 +220,14 @@
             <input type="text" name="rpass" class="form-control" placeholder="Vuelva a digitar su NIT" required="">
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-12 my-1">
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text "><img src="imagenes/identidad.png" width="20"></div>
+              <div class="input-group-text"><img src="imagenes/identidad.png" width="20"></div>
             </div>
-            <select class="form-control" name="tipoUsuario" required="">
-              <option value="cliente">Cliente</option>
-              <option value="administrador">Administrador</option>
-            </select>
+            <input type="text" name="tipoUsuario" class="form-control" value="cliente" required="" readonly="readonly">
           </div>
         </div>
-
         <input type="checkbox" style="margin:15px 15px;">Recordarme
         <button type="submit" class="btn btn-warning">Registro</button>
 

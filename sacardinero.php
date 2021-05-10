@@ -11,6 +11,28 @@
 	<link href="static/css/style.css" rel="stylesheet">
 
 	<style>
+
+	/* The Modal (background) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Modal Content Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 4% auto 15% auto;
+      border: 1px solid #888;
+      width: 30%;
+      padding-bottom: 20px;
+    }
 		#home-box {
 			display: block;
 			background: #D2D2D2;
@@ -74,7 +96,7 @@
 									echo "<br>";
 									echo "<br>";
 
-									echo '<form action="retiro.php" method="post">';  //ejecutaactualizar
+									echo '<form action="retiro.php" method="post">';  
 
 									echo "<font color='black' size='4'>Numero de Cuenta</font><br><input type='text' class='form-control' name='id' value= ", $arreglo[0], " readonly='readonly'";
 									echo "<br>";
